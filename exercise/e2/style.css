@@ -36,3 +36,79 @@ body {
 .border-bottom {
     border-bottom: 20px solid #48474A;
 }
+
+/* painting2 */
+
+.charcoal {
+    background-color: #1D1B1E;
+}
+
+.teagreen {
+    background-color: #DEEDD0;
+}
+
+.mango {
+    background-color: #F5C647;
+}
+
+.cyan-blue {
+    background-color: #3B84DF;
+}
+
+.tuna {
+    background-color: #354045;
+}
+
+.wheatfield {
+    background-color: #F2ECD5;
+}
+
+.forest {
+    background-color: #499268;
+}
+
+.pastel-pink {
+    background-color: #F6D8D4;
+}
+
+.persian-blue {
+    background-color: #2141B3;
+}
+
+.tomato {
+    background-color: #DF534B;
+}
+
+.orange {
+    background-color: #EC724C;
+}
+
+.reddish {
+    background-color: #C14545;
+}
+
+.eggshell {
+    background-color: #F6E8E2;
+}
+
+.coral {
+    background-color: #D74A44;
+}
+
+.indian-yellow {
+    background-color: #F0A14F;
+}
+
+/* painting3 */
+
+.kiwi {
+    background-color: #B4E949;
+}
+
+.white {
+    background-color: #fff;
+}
+
+.pink {
+    background-color: #FF6BBD;
+}
