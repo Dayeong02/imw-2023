@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: #61CDF0;
 }
 
 h1 {
