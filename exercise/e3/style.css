@@ -1,0 +1,63 @@
+.adobe-font {
+    font-family: "quirkwood-chunky", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 100px;
+    animation: bounce 1s infinite alternate;
+}
+
+
+@keyframes bounce {
+    20%, 50%, 80%, to {
+        transform: translateY(0)
+    }
+    40% {
+        transform: translateY(-30px)
+    }
+    65% {
+        transform: translateY(-15px)
+    }
+    85% {
+        transform: translateY(-5px)
+    }
+    
+}
+
+.google-font {
+    font-family: "Arvo", serif;
+    font-size: 60px;
+    animation: grow 1s infinite alternate;
+}
+
+@keyframes grow {
+    0% {
+        font-size: 60px;
+    }
+
+    100% {
+        font-size: 90px;
+    }
+  }
+
+
+@font-face {
+    font-family: 'Bespoke';
+    src: url('fonts/Bespoke-yX_2D5ihmJ.eot');
+    src: url('fonts/Bespoke-yX_2D5ihmJ.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Bespoke-yX_2D5ihmJ.woff') format('woff'),
+       url('fonts/Bespoke-yX_2D5ihmJ.ttf') format('truetype'),
+       url('fonts/Bespoke-yX_2D5ihmJ.svg#Bespoke-yX_2D5ihmJ') format('svg');
+  }
+
+.self-hosted {
+    font-family: 'Bespoke', sans-serif;
+    animation: shake 2ms infinite alternate;
+  }
+
+@keyframes shake {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
+}
