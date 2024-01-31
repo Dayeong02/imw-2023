@@ -1,0 +1,195 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.poster {
+    width: 600px;
+    height: 800px;
+    border-style: solid;
+    margin: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.content {
+  z-index: 2;
+}
+
+h1 {
+    background: #badde4;
+    background: linear-gradient(to right, #badde4 0%, #b8d8cb 50%, #d4e2b6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-size: 200px;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 40px;
+    margin: 0;
+    margin-left: 40px;
+    margin-top: -40px;
+    text-transform: uppercase;
+}
+
+h1:nth-of-type(2) {
+    font-size: 180px;
+    letter-spacing: 10px;
+    margin-top: -80px;
+    margin-left: 0px;
+}
+
+h2 {
+    font-family: 'Anton', sans-serif;
+    margin-left: 8px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+ul {
+    padding: 0;
+    margin-left: 10px;
+    margin-top: -20px;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+}
+
+li {
+    flex: 0 0 18%; 
+    box-sizing: border-box;
+    padding: 0 5px 5px 5px;
+    font-size: 12px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+  }
+  
+p {
+    margin: 0 10px;
+    white-space: pre-wrap;
+    font-size: 12px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    color: #5c5c5c;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+.two-col {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 21px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .two-col p,
+  .two-col h3 {
+    margin: 0;
+  }
+
+  .two-col h3 {
+    font-family: 'Anton', sans-serif;
+  }
+
+  .two-col p {
+    font-size: 11px;
+    font-weight: 200;
+    color: black;
+  }
+
+.circle {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    padding: 2.5px;
+    background-clip: content-box;
+    animation: spin 10s linear infinite;
+    border: 2.5px dashed black;
+  }
+
+  .circle-wrapper:active .circle {
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes rotate { 
+    100% { 
+      transform: rotateZ(360deg);
+    }
+  }
+  
+  .outer-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2.5px dashed black;
+    animation: rotate 20s linear infinite;
+    float: left;
+    margin: 10px;
+    top: 0;
+    right: 0;
+    position: absolute;
+  }
+  
+  .inner-circle {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 17px;
+    right: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+
+    &:hover {
+      background-color: white;
+      box-shadow: 0 0 0 1px black;    
+    }
+  }
+  
+  .inner-circle p {
+    text-align: center;
+    color: white;
+    margin: 0;
+    line-height: 1.2em;
+    transition: 0.2s;
+
+    &:hover {
+      color: black;
+    }
+  }
+  
+  .eye-shape {
+    width: 300px;
+    height: 300px;
+    border-radius: 100% 0px;
+    transform: rotate(45deg);
+    box-shadow: 0 0 0 1px rgb(170, 170, 170);    
+    z-index: 1;
+    position: absolute;
+    top: 140px;
+    left: 150px;
+  }
+
+  .pupil {
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgb(170, 170, 170);    
+    z-index: 2;
+    position: absolute;
+    top: 202px;
+    left: 210px;
+  }
