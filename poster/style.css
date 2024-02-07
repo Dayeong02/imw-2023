@@ -1,4 +1,4 @@
-body {
+* {
     margin: 0px;
     padding: 0px;
 }
@@ -11,7 +11,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     position: relative;
-
+    padding: 10px;
 }
 
 .content {
@@ -29,7 +29,7 @@ h1 {
     letter-spacing: 40px;
     margin: 0;
     margin-left: 40px;
-    margin-top: -40px;
+    margin-top: -20px;
     text-transform: uppercase;
 }
 
@@ -42,10 +42,7 @@ h1:nth-of-type(2) {
 
 h2 {
     font-family: 'Anton', sans-serif;
-    margin-left: 8px;
     text-transform: uppercase;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 ul {
@@ -66,43 +63,59 @@ li {
     font-family: 'Jost', sans-serif;
     font-weight: 500;
   }
-  
+
 p {
-    margin: 0 10px;
-    white-space: pre-wrap;
-    font-size: 12px;
-    font-family: 'Jost', sans-serif;
-    font-weight: 400;
-    color: #5c5c5c;
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  white-space: pre-wrap;
 }
+
 
 h3 {
     font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+
+  &:hover {
+    color: #badde4;
+  }
+}
+
+.desc p {
+  color: #5c5c5c;
+  margin-top: 20px;
+
+  &:hover {
+    color: #badde4;
+  }
 }
 
 .two-col {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 21px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-top: 30px;
   }
   
-  .two-col p,
-  .two-col h3 {
-    margin: 0;
-  }
+.two-col p,
+.two-col h3 {
+  margin: 0;
+}
 
-  .two-col h3 {
-    font-family: 'Anton', sans-serif;
-  }
+.two-col h3 {
+  font-family: 'Anton', sans-serif;
+}
 
-  .two-col p {
-    font-size: 11px;
-    font-weight: 200;
-    color: black;
-  }
+.two-col p {
+  font-size: 11px;
+  font-weight: 200;
+  color: black;
+}
 
 .circle {
     display: block;
@@ -115,81 +128,172 @@ h3 {
     border: 2.5px dashed black;
   }
 
-  .circle-wrapper:active .circle {
-    animation: spin 2s linear infinite;
-  }
+.circle-wrapper:active .circle {
+  animation: spin 2s linear infinite;
+}
 
-  @keyframes rotate { 
-    100% { 
-      transform: rotateZ(360deg);
-    }
+@keyframes rotate { 
+  100% { 
+    transform: rotateZ(360deg);
   }
-  
-  .outer-circle {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 2.5px dashed black;
-    animation: rotate 20s linear infinite;
-    float: left;
-    margin: 10px;
-    top: 0;
-    right: 0;
-    position: absolute;
-  }
-  
-  .inner-circle {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 17px;
-    right: 17px;
-    cursor: pointer;
-    transition: 0.3s;
-    text-decoration: none;
+}
 
-    &:hover {
-      background-color: white;
-      box-shadow: 0 0 0 1px black;    
-    }
+.outer-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2.5px dashed black;
+  animation: rotate 20s linear infinite;
+  float: left;
+  margin: 10px;
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+
+.inner-circle {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+
+  &:hover {
+    background-color: white;
+    box-shadow: 0 0 0 1px black;    
+  }
+}
+
+.inner-circle p {
+  text-align: center;
+  color: white;
+  margin: 0;
+  line-height: 1.2em;
+  transition: 0.2s;
+  font-size: 15px;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.eye-shape {
+  width: 300px;
+  height: 300px;
+  border-radius: 100% 0px;
+  transform: rotate(45deg);
+  box-shadow: 0 0 0 1px rgb(170, 170, 170);    
+  z-index: 1;
+  position: absolute;
+  top: 140px;
+  left: 150px;
+}
+
+.pupil {
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgb(170, 170, 170);    
+  z-index: 2;
+  position: absolute;
+  top: 202px;
+  left: 210px;
+}
+
+.info p {
+  margin-top: 20px;
+  font-size: 30px;
+  white-space: pre-wrap;
+}
+
+.org a {
+  
+  &:hover {
+    color: #d4e2b6;
+  }
+}
+
+/*  Info index */
+
+.text-container {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 5px 0px;
+}
+
+.flowing-text {
+  animation: flowAnimation 5s linear infinite;
+  font-size: 20px;
+  color: white;
+  letter-spacing: 10px;
+}
+
+@keyframes flowAnimation {
+  from {
+      transform: translateX(-90%);
+  }
+  to {
+      transform: translateX(100%);
+  }
+}
+
+/* Date index */
+
+.info-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 240px;
+  border: 1px solid black;
+  margin-top: 20px;
+}
+
+.info-section-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 240px;
+  border: 1px solid black;
+  margin-top: 20px;
+}
+
+.info-section-item {
+  border-left: 1px solid black;
+  display: flex;
+  
+  &:first-child {
+      border-left: 0px;
   }
   
-  .inner-circle p {
+}
+
+.info-section-content {
+  height: 100%;
+  white-space: pre-wrap;
+
+  h4 {
+    font-size: 18px;
+    font-family: 'Jost', sans-serif;
     text-align: center;
-    color: white;
-    margin: 0;
-    line-height: 1.2em;
-    transition: 0.2s;
-
-    &:hover {
-      color: black;
-    }
-  }
-  
-  .eye-shape {
-    width: 300px;
-    height: 300px;
-    border-radius: 100% 0px;
-    transform: rotate(45deg);
-    box-shadow: 0 0 0 1px rgb(170, 170, 170);    
-    z-index: 1;
-    position: absolute;
-    top: 140px;
-    left: 150px;
+    border-bottom: 1px solid black;
+    height: 30%;
+    display: block;
+    margin-top: -12px;
   }
 
-  .pupil {
-    width: 175px;
-    height: 175px;
-    border-radius: 50%;
-    box-shadow: 0 0 0 1px rgb(170, 170, 170);    
-    z-index: 2;
-    position: absolute;
-    top: 202px;
-    left: 210px;
+  p {
+    padding: 0px 10px;
+    font-size: 14px;
   }
+}
