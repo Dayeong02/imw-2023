@@ -1,30 +1,42 @@
-$(document).ready(function(){
-    $(document).mousemove(function(e){
-        $(".mouse").css({
-            left: e.pageX,
-            top: e.pageY
-        });
-    });
+// $(document).ready(function(){
+//     $(document).mousemove(function(e){
+//         $(".mouse").css({
+//             left: e.pageX,
+//             top: e.pageY
+//         });
+//     });
 
+// });
+
+
+document.addEventListener("mousemove", function(e) {
+    var cursor = document.getElementById("cursor");
+    cursor.style.left = e.pageX + "px";
+    cursor.style.top = e.pageY + "px";
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    // 링크 클릭 시 페이지 이동 처리
-    var links = document.querySelectorAll("a");
-    links.forEach(function(link) {
-        link.addEventListener("click", function(event) {
-            event.preventDefault(); // 기본 동작(페이지 이동) 방지
+document.addEventListener("click", function(e) {
+    // 클릭한 요소가 "a" 태그인 경우에는 폭죽 효과를 발생시키지 않습니다.
+    if (e.target.tagName === "A") {
+        return;
+    }
 
-            var url = this.getAttribute("href"); // 클릭된 링크의 href 속성 값 가져오기
+    var cursor = document.getElementById("cursor");
+    var explosionRadius = 100; // Change the radius of explosion here
+    for (var i = 0; i < 50; i++) { // Change the number of confetti here
+        var confetti = document.createElement("div");
+        confetti.className = "confetti";
+        var x = e.pageX + Math.random() * explosionRadius - explosionRadius / 2;
+        var y = e.pageY + Math.random() * explosionRadius - explosionRadius / 2;
+        confetti.style.left = x + "px";
+        confetti.style.top = y + "px";
+        /* 색상을 파스텔톤으로 변경합니다. */
+        confetti.style.backgroundColor = "hsl(" + (Math.random() * 360) + ", 80%, 80%)"; // Adjust saturation and lightness
+        document.body.appendChild(confetti);
 
-            // 애니메이션 효과 적용 (예: fadeOut)
-            document.querySelector(".first-page").style.opacity = 0;
-
-            // 일정 시간(예: 500ms) 후 새로운 페이지 로드 및 애니메이션 효과 적용 (예: fadeIn)
-            setTimeout(function() {
-                // 페이지 이동
-                window.location.href = url;
-            }, 500);
-        });
-    });
+        setTimeout(function() {
+            document.body.removeChild(confetti);
+        }, 500);
+    }
 });
+

@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* 스크롤바 제거 */
+}
+
+h1 {
+    font-family: "Baskervville", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.top-bar {
+    width: 100%;
+    display: block;
+    position: fixed;
+    padding: 20px 80px;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 20px;
+
+    &:hover {
+        opacity: 0.3;
+        background-color: white;
+        color: black;
+    }
+}
+
+.left-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vh; /* 화면의 높이에 따라 설정 */
+    padding: 20px 80px;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 20px;
+    transform-origin: left bottom; /* 회전 기준점 설정 */
+    transform: rotate(-90deg) translateY(100%); /* 회전 및 위치 조정 */
+    white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
+}
+
+.bottom-bar {
+    width: 100%;
+    display: block;
+    position: fixed;
+    padding: 20px 80px;
+    border-top: 1px solid white;
+    color: white;
+    bottom: 0px;
+    font-size: 20px;
+}
+
+.right-bar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100vh; /* 너비 자동으로 설정 */
+    padding: 20px 0px;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 20px;
+    white-space: nowrap;
+    transform-origin: bottom right;
+    transform: rotate(90deg) translateY(100%);
+}
+
+.section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: white;
+}
+
+
+
+#section1 { background-color: #ff5555; }
+#section2 { background-color: #55ff55; }
+#section3 { background-color: #5555ff; }
+#section4 { background-color: #ffff55; }
