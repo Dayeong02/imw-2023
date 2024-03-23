@@ -164,6 +164,20 @@ li {
     .title {
         font-size: 30px;
     }
+
+    .top-bar, .left-bar, .bottom-bar, .right-bar {
+        padding: 13px 0px;
+    }
+
+    .go-to-top {
+        width: 60px;
+        height: 60px;
+    }
+
+    .outer-circle {
+        width: 60px;
+        height: 60px;
+    }
 }
 
 .fade-in {
@@ -175,7 +189,7 @@ li {
     opacity: 1;
 }
 
-  .go-to-top {
+.go-to-top {
     position: fixed; 
     flex-direction: column;
     bottom: 80px;
