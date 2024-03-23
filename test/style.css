@@ -2,6 +2,33 @@
     margin: 0;
     padding: 0;
     overflow: hidden; /* 스크롤바 제거 */
+    cursor: none;
+}
+
+body{
+    background-color: #f06767;
+}
+
+@font-face {
+    font-family: 'Bespoke';
+    src: url('fonts/Bespoke-yX_2D5ihmJ.eot');
+    src: url('fonts/Bespoke-yX_2D5ihmJ.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Bespoke-yX_2D5ihmJ.woff') format('woff'),
+       url('fonts/Bespoke-yX_2D5ihmJ.ttf') format('truetype'),
+       url('fonts/Bespoke-yX_2D5ihmJ.svg#Bespoke-yX_2D5ihmJ') format('svg');
+  }
+
+a {
+    text-decoration: none;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 0.8em;
+
+
+    &:hover {
+        color: #F69186;
+    }
 }
 
 h1 {
@@ -14,15 +41,14 @@ h1 {
     width: 100%;
     display: block;
     position: fixed;
-    padding: 20px 80px;
+    padding: 20px 0px;
     border-bottom: 1px solid white;
     color: white;
     font-size: 20px;
 
     &:hover {
-        opacity: 0.3;
-        background-color: white;
-        color: black;
+        background-color: rgba(255, 103, 103, 0.1); /* 흰색 배경에 0.3의 투명도 적용 */
+        border-bottom: 1px solid white;
     }
 }
 
@@ -31,38 +57,57 @@ h1 {
     bottom: 0;
     left: 0;
     width: 100vh; /* 화면의 높이에 따라 설정 */
-    padding: 20px 80px;
+    padding: 20px 0px;
     border-bottom: 1px solid white;
     color: white;
     font-size: 20px;
     transform-origin: left bottom; /* 회전 기준점 설정 */
     transform: rotate(-90deg) translateY(100%); /* 회전 및 위치 조정 */
     white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
+
+    &:hover {
+        background-color: rgba(255, 103, 103, 0.1); /* 흰색 배경에 0.3의 투명도 적용 */
+        border-bottom: 1px solid white;
+    }
 }
 
 .bottom-bar {
     width: 100%;
     display: block;
     position: fixed;
-    padding: 20px 80px;
+    padding: 20px 0px;
     border-top: 1px solid white;
     color: white;
     bottom: 0px;
     font-size: 20px;
+
+    &:hover {
+        background-color: rgba(255, 103, 103, 0.1); /* 흰색 배경에 0.3의 투명도 적용 */
+        border-bottom: 1px solid white;
+    }
 }
 
 .right-bar {
     position: fixed;
     bottom: 0;
     right: 0;
-    width: 100vh; /* 너비 자동으로 설정 */
     padding: 20px 0px;
+    width: 100vh; /* 너비 자동으로 설정 */
     border-bottom: 1px solid white;
     color: white;
     font-size: 20px;
     white-space: nowrap;
-    transform-origin: bottom right;
+    transform-origin: right bottom;
     transform: rotate(90deg) translateY(100%);
+
+    &:hover {
+        background-color: rgba(255, 103, 103, 0.1); /* 흰색 배경에 0.3의 투명도 적용 */
+        border-bottom: 1px solid white;
+    }
+}
+
+.direction {
+    padding: 80px;
 }
 
 .section {
@@ -73,11 +118,112 @@ h1 {
     align-items: center;
     font-size: 2em;
     color: white;
+    border-bottom: 1px solid white;
 }
 
+.section4 {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
 
+.title {
+    font-family: 'Bespoke', sans-serif;
+    font-size: 2em;
+    width: 100vw;
+    text-align: center;
+}
 
-#section1 { background-color: #ff5555; }
-#section2 { background-color: #55ff55; }
-#section3 { background-color: #5555ff; }
-#section4 { background-color: #ffff55; }
+.title4 {
+    width: 400px;
+    text-align: center;
+    padding-right: 200px;
+}
+
+li {
+    list-style: none; /* 리스트 스타일 제거 */
+    flex: 1; /* 각각의 아이템을 동일한 너비로 설정 */
+    order: 1; /* 순서를 조정하여 title을 오른쪽으로 이동 */
+    padding-bottom: 10px;
+    font-weight: 100;
+    font-size: 0.8em;
+}
+
+@media (max-width: 899px) {
+
+    .section4 {
+        flex-direction: column;
+    }
+
+    .title4 {
+        margin-bottom: 40px;
+        width: 100vw;
+        padding-right: 0;
+
+    }
+
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+}
+
+  .go-to-top {
+    position: fixed; 
+    flex-direction: column;
+    bottom: 80px;
+    right: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 120px; 
+    height: 120px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 20px;
+
+    &:hover {
+        background-color: rgba(255, 103, 103, 0.1);
+    }
+}
+
+.go-to-top span {
+    font-size: 14px;
+}
+
+.outer-circle {
+    position: fixed;
+    bottom: 80px;
+    right: 80px;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    border-radius: 50%;
+    border: 1px dashed white;
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate { 
+    100% { 
+        transform: rotateZ(360deg);
+    }
+}
+
+.cursor {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #f06767;
+    pointer-events: none;
+    transition: transform 0.15s ease-in-out, width 0.15s ease-in-out, height 0.15s ease-in-out;
+    transform: translate(-50%, -50%);
+    z-index: 9999; 
+}
