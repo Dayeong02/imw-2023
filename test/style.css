@@ -25,7 +25,6 @@ a {
     font-weight: 400;
     font-size: 0.8em;
 
-
     &:hover {
         color: #F69186;
     }
@@ -162,6 +161,9 @@ li {
 
     }
 
+    .title {
+        font-size: 18px;
+    }
 }
 
 .fade-in {
