@@ -23,7 +23,7 @@ a {
     color: white;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    font-size: 0.8em;
+    font-size: 16px;
 
     &:hover {
         color: #F69186;
@@ -162,7 +162,7 @@ li {
     }
 
     .title {
-        font-size: 18px;
+        font-size: 30px;
     }
 }
 
