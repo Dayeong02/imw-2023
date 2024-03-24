@@ -10,16 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function playTone(context, key) {
     const oscillator = context.createOscillator();
-    oscillator.type = 'sine'; // Sine wave
-    oscillator.frequency.setValueAtTime(mapKeyToFrequency(key), context.currentTime); // Frequency in Hz
+    oscillator.type = 'sine';
+    oscillator.frequency.setValueAtTime(mapKeyToFrequency(key), context.currentTime);
     oscillator.connect(context.destination);
     oscillator.start();
-    oscillator.stop(context.currentTime + 0.5); // Play sound for 0.5 seconds
+    oscillator.stop(context.currentTime + 0.5);
 }
 
 function mapKeyToFrequency(key) {
-    // Map keyboard keys to different frequencies
-    const baseFrequency = 440; // A4 frequency
+    const baseFrequency = 440;
     const keyMappings = {
         'a': 1,
         's': 2,
@@ -36,5 +35,28 @@ function mapKeyToFrequency(key) {
 
 function showVisualFeedback(element, key) {
     element.innerHTML = `You pressed "${key}".`;
-    // Add more sophisticated visual feedback as needed
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const visualsElement = document.getElementById('visuals');
+
+    document.addEventListener('keydown', (e) => {
+        playTone(audioContext, e.key);
+        showVisualFeedback(visualsElement, e.key);
+    });
+
+    document.addEventListener('keydown', function(e) {
+        const note = document.createElement('div');
+        note.classList.add('note');
+        note.textContent = '♪'; 
+        note.style.left = `${Math.random() * window.innerWidth}px`;
+        note.style.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+      
+        document.getElementById('visuals').appendChild(note);
+      
+        note.addEventListener('animationend', function() {
+          note.remove();
+        });
+      });
+});
