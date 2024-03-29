@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* 스크롤바 제거 */
+    overflow: hidden;
     cursor: none;
 }
 
@@ -46,7 +46,7 @@ h1 {
     font-size: 20px;
 
     &:hover {
-        background-color: rgba(255, 103, 103, 0.1); /* 흰색 배경에 0.3의 투명도 적용 */
+        background-color: rgba(255, 103, 103, 0.1);
         border-bottom: 1px solid white;
     }
 }
@@ -55,17 +55,17 @@ h1 {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100vh; /* 화면의 높이에 따라 설정 */
+    width: 100vh;
     padding: 20px 0px;
     border-bottom: 1px solid white;
     color: white;
     font-size: 20px;
-    transform-origin: left bottom; /* 회전 기준점 설정 */
-    transform: rotate(-90deg) translateY(100%); /* 회전 및 위치 조정 */
-    white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
+    transform-origin: left bottom;
+    transform: rotate(-90deg) translateY(100%);
+    white-space: nowrap;
 
     &:hover {
-        background-color: rgba(255, 103, 103, 0.1); /* 흰색 배경에 0.3의 투명도 적용 */
+        background-color: rgba(255, 103, 103, 0.1);
         border-bottom: 1px solid white;
     }
 }
@@ -81,7 +81,7 @@ h1 {
     font-size: 20px;
 
     &:hover {
-        background-color: rgba(255, 103, 103, 0.1); /* 흰색 배경에 0.3의 투명도 적용 */
+        background-color: rgba(255, 103, 103, 0.1);
         border-bottom: 1px solid white;
     }
 }
@@ -90,18 +90,34 @@ h1 {
     position: fixed;
     bottom: 0;
     right: 0;
-    padding: 20px 0px;
-    width: 100vh; /* 너비 자동으로 설정 */
+    width: 100vh;
     border-bottom: 1px solid white;
     color: white;
     font-size: 20px;
     white-space: nowrap;
     transform-origin: right bottom;
     transform: rotate(90deg) translateY(100%);
+    display: flex;
+}
+
+.right-bar-top {
+    width: 100%;
+    height: 100%;
+    padding: 20px 0px;
 
     &:hover {
-        background-color: rgba(255, 103, 103, 0.1); /* 흰색 배경에 0.3의 투명도 적용 */
-        border-bottom: 1px solid white;
+        background-color: rgba(255, 103, 103, 0.1);
+    }
+}
+
+.right-bar-bottom {
+    width: 100%;
+    height: 100%;
+    padding: 20px 0px;
+    border-left: 1px solid white;
+
+    &:hover {
+        background-color: rgba(255, 103, 103, 0.1);
     }
 }
 
@@ -128,7 +144,7 @@ h1 {
 
 .title {
     font-family: 'Bespoke', sans-serif;
-    font-size: 2em;
+    font-size: 60px;
     width: 100vw;
     text-align: center;
 }
@@ -140,9 +156,9 @@ h1 {
 }
 
 li {
-    list-style: none; /* 리스트 스타일 제거 */
-    flex: 1; /* 각각의 아이템을 동일한 너비로 설정 */
-    order: 1; /* 순서를 조정하여 title을 오른쪽으로 이동 */
+    list-style: none;
+    flex: 1;
+    order: 1; 
     padding-bottom: 10px;
     font-weight: 100;
     font-size: 0.8em;
@@ -212,9 +228,17 @@ li {
     z-index: 9999; 
 }
 
+.heart {
+    position: fixed;
+    font-size: 24px;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+
 @media (max-width: 899px) {
 
-    .section4 {
+    .section4, .section5 {
         flex-direction: column;
     }
 
@@ -229,7 +253,7 @@ li {
         font-size: 30px;
     }
 
-    .top-bar, .left-bar, .bottom-bar, .right-bar {
+    .top-bar, .left-bar, .bottom-bar, .right-bar-top, .right-bar-bottom {
         padding: 13px 0px;
     }
 

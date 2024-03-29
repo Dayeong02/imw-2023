@@ -58,9 +58,14 @@ document.addEventListener('DOMContentLoaded', function() {
     scrollToSection('section3');
   });
 
-  document.querySelector('.right-bar').addEventListener('click', function(e) {
+  document.querySelector('.right-bar-top').addEventListener('click', function(e) {
     e.preventDefault();
     scrollToSection('section4');
+  });
+
+  document.querySelector('.right-bar-bottom').addEventListener('click', function(e) {
+    e.preventDefault();
+    scrollToSection('section5');
   });
 
   function scrollToSection(sectionId) {
@@ -183,9 +188,34 @@ document.addEventListener('scroll', function() {
 });
 
 
+//top button
 document.querySelector('.go-to-top').addEventListener('click', function(e) {
   e.preventDefault();
   window.scrollTo({top: 0, behavior: 'smooth'});
 });
 
 
+//keyboard interaction
+document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('keydown', function(event) {
+      const emojis = ['🤍', '️💗', '✨', '✌️', '☀️', '☁️', '☃️', '⚡', '⭐', '🥳', '❄️'];
+
+      for (let i = 0; i < 10; i++) {
+          const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+          const heart = document.createElement('div');
+          heart.classList.add('heart');
+          heart.textContent = randomEmoji;
+
+          const randomX = Math.random() * (window.innerWidth - 40);
+          const randomY = Math.random() * (window.innerHeight - 40);
+          heart.style.left = `${randomX}px`;
+          heart.style.top = `${randomY}px`;
+
+          document.body.appendChild(heart);
+
+          setTimeout(() => {
+              heart.remove();
+          }, 2000);
+      }
+  });
+});
